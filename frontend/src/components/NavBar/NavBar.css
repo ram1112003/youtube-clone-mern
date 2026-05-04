@@ -1,0 +1,101 @@
+.navbar {
+  background-color: #0f0f0f;
+  position: sticky;
+  top: 56px;
+  z-index: 998;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.navbar-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.navbar-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  align-items: center;
+  height: 56px;
+  padding: 8px 0;
+}
+
+/* Hide scrollbar but keep functionality */
+.navbar-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.navbar-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #f1f1f1;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-item.active {
+  background-color: #ffffff;
+  color: #0f0f0f;
+  font-weight: 500;
+}
+
+.navbar-item.active:hover {
+  background-color: #e8e8e8;
+}
+
+/* First item (All) gets a bit more padding */
+.navbar-item:first-child {
+  margin-left: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-scroll {
+    padding: 0 16px;
+    gap: 8px;
+  }
+  
+  .navbar-item {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 48px;
+  }
+  
+  .navbar-scroll {
+    padding: 0 12px;
+    height: 48px;
+  }
+  
+  .navbar-item {
+    padding: 5px 8px;
+    font-size: 12px;
+    min-height: 28px;
+  }
+}

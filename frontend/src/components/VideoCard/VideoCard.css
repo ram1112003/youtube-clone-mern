@@ -1,0 +1,136 @@
+.video-card {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background-color: transparent;
+}
+
+.video-card:hover {
+  /* No transform on hover - keep it simple */
+}
+
+.thumbnail-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  background-color: #181818;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: none;
+}
+
+.video-card:hover .video-thumbnail {
+  /* No scale effect */
+}
+
+.video-duration {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.video-details {
+  display: flex;
+  gap: 12px;
+}
+
+.video-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.video-title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 4px 0;
+  color: #ffffff;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.channel-title {
+  font-size: 14px;
+  color: #aaaaaa;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.video-metadata {
+  font-size: 14px;
+  color: #aaaaaa;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dot {
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .video-title {
+    font-size: 15px;
+    -webkit-line-clamp: 3;
+  }
+  
+  .channel-title,
+  .video-metadata {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thumbnail-container {
+    margin-bottom: 8px;
+  }
+  
+  .video-details {
+    gap: 8px;
+  }
+  
+  .video-title {
+    font-size: 14px;
+  }
+  
+  .channel-title,
+  .video-metadata {
+    font-size: 12px;
+  }
+  
+  .video-duration {
+    font-size: 11px;
+    padding: 2px 4px;
+  }
+}
+
+/* Hover effects for desktop */
+@media (hover: hover) {
+  .video-card:hover .video-title {
+    color: #ffffff;
+  }
+  
+  .video-card:hover .channel-title {
+    color: #ffffff;
+  }
+}
