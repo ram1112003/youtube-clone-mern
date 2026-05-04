@@ -1,0 +1,22 @@
+{
+  "name": "youtube-clone-mern",
+  "version": "1.0.0",
+  "description": "A full-featured YouTube clone built with MERN stack",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:start\"",
+    "backend:dev": "cd backend && npm run dev",
+    "backend:start": "cd backend && npm start",
+    "frontend:start": "cd frontend && npm start",
+    "frontend:build": "cd frontend && npm run build",
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install:all": "npm run install:backend && npm run install:frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": ["youtube", "clone", "mern", "react", "express", "mongodb", "nodejs"],
+  "author": "",
+  "license": "MIT"
+}
